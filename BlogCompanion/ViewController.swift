@@ -15,6 +15,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
+
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
 
 

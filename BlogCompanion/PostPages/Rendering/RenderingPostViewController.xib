@@ -1,22 +1,107 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RenderingPostViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RenderingPostViewController" customModule="BlogCompanion" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="aDd-cX-lvr" id="cse-a7-klf"/>
+                <outlet property="metalSwitch" destination="BPu-QR-rVm" id="FGv-rp-292"/>
+                <outlet property="renderView" destination="rN2-CV-OSf" id="emu-dw-RXm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5U9-TN-nuS">
+                    <rect key="frame" x="319" y="0.0" width="258" height="363"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5U9-TN-nuS" secondAttribute="height" multiplier="2626:3692" id="ZSp-i3-D7M"/>
+                    </constraints>
+                </imageView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rN2-CV-OSf" customClass="RenderView" customModule="BlogCompanion" customModuleProvider="target">
+                    <rect key="frame" x="319" y="0.0" width="258" height="363"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aDd-cX-lvr">
+                    <rect key="frame" x="319" y="0.0" width="258" height="363"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pvY-qT-LIb">
+                    <rect key="frame" x="383" y="371" width="130.5" height="31"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Metal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEq-Mn-C0w">
+                            <rect key="frame" x="0.0" y="0.0" width="76.5" height="31"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BPu-QR-rVm">
+                            <rect key="frame" x="81.5" y="0.0" width="51" height="31"/>
+                            <connections>
+                                <action selector="switchAction:" destination="-1" eventType="valueChanged" id="iIA-oW-TCC"/>
+                            </connections>
+                        </switch>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="pvY-qT-LIb" firstAttribute="top" secondItem="aDd-cX-lvr" secondAttribute="bottom" constant="8" symbolic="YES" id="9Yj-4r-FJG"/>
+                <constraint firstItem="aDd-cX-lvr" firstAttribute="top" secondItem="rN2-CV-OSf" secondAttribute="top" id="H1y-4G-bD3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="5U9-TN-nuS" secondAttribute="leading" constant="-10" id="Ik0-9i-5UW"/>
+                <constraint firstItem="5U9-TN-nuS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="NCM-v0-xPF"/>
+                <constraint firstItem="5U9-TN-nuS" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-30" id="V8R-md-xuh"/>
+                <constraint firstItem="aDd-cX-lvr" firstAttribute="bottom" secondItem="rN2-CV-OSf" secondAttribute="bottom" id="c78-lP-EXA"/>
+                <constraint firstItem="rN2-CV-OSf" firstAttribute="leading" secondItem="5U9-TN-nuS" secondAttribute="leading" id="eiX-21-rPY"/>
+                <constraint firstItem="pvY-qT-LIb" firstAttribute="top" secondItem="5U9-TN-nuS" secondAttribute="bottom" constant="8" symbolic="YES" id="inF-le-ANK"/>
+                <constraint firstItem="pvY-qT-LIb" firstAttribute="centerX" secondItem="aDd-cX-lvr" secondAttribute="centerX" id="lQs-Ux-dG0"/>
+                <constraint firstItem="aDd-cX-lvr" firstAttribute="leading" secondItem="rN2-CV-OSf" secondAttribute="leading" id="oHK-ME-RVu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="5U9-TN-nuS" secondAttribute="top" id="pzY-64-ZYx"/>
+                <constraint firstItem="aDd-cX-lvr" firstAttribute="trailing" secondItem="rN2-CV-OSf" secondAttribute="trailing" id="t3r-3M-q7K"/>
+                <constraint firstItem="rN2-CV-OSf" firstAttribute="trailing" secondItem="5U9-TN-nuS" secondAttribute="trailing" id="tAu-UL-fs5"/>
+                <constraint firstItem="rN2-CV-OSf" firstAttribute="top" secondItem="5U9-TN-nuS" secondAttribute="top" id="xx7-bf-glq"/>
+                <constraint firstItem="rN2-CV-OSf" firstAttribute="bottom" secondItem="5U9-TN-nuS" secondAttribute="bottom" id="z7c-Og-n4e"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Ik0-9i-5UW"/>
+                    <exclude reference="V8R-md-xuh"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact-widthClass=regular">
+                <mask key="constraints">
+                    <include reference="V8R-md-xuh"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="Ik0-9i-5UW"/>
+                </mask>
+            </variation>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="kdH-wi-PDq" appends="YES" id="TfP-Tg-uSc"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="kdH-wi-PDq">
+            <connections>
+                <action selector="panAction:" destination="-1" id="Pmr-eH-4cg"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

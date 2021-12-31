@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreImage
 
 class OnePixelPostViewController: PostBaseViewController {
 
@@ -14,8 +15,6 @@ class OnePixelPostViewController: PostBaseViewController {
 
         // Do any additional setup after loading the view.
     }
-
-
     /*
     // MARK: - Navigation
 

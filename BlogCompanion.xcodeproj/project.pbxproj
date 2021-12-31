@@ -19,6 +19,13 @@
 		DD0A0EC6277E140100918465 /* RenderingPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0A0EC4277E140100918465 /* RenderingPostViewController.xib */; };
 		DD0A0ECA277E1FB200918465 /* OnePixelPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A0EC8277E1FB200918465 /* OnePixelPostViewController.swift */; };
 		DD0A0ECB277E1FB200918465 /* OnePixelPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0A0EC9277E1FB200918465 /* OnePixelPostViewController.xib */; };
+		DD0A0ED1277E211600918465 /* TimeTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A0ECD277E211600918465 /* TimeTracker.swift */; };
+		DD0A0ED2277E211600918465 /* CoreImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A0ECE277E211600918465 /* CoreImage+Extensions.swift */; };
+		DD0A0ED3277E211600918465 /* MemorySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A0ECF277E211600918465 /* MemorySnapshot.swift */; };
+		DD0A0ED4277E211600918465 /* Numbers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A0ED0277E211600918465 /* Numbers+Extensions.swift */; };
+		DD0A0ED6277E213300918465 /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A0ED5277E213300918465 /* RenderView.swift */; };
+		DD0A0ED8277E223A00918465 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A0ED7277E223A00918465 /* UIKit+Extensions.swift */; };
+		DD0A0EEB277E4A3E00918465 /* GeometryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A0EEA277E4A3E00918465 /* GeometryExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		DD0A0EC4277E140100918465 /* RenderingPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RenderingPostViewController.xib; sourceTree = "<group>"; };
 		DD0A0EC8277E1FB200918465 /* OnePixelPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePixelPostViewController.swift; sourceTree = "<group>"; };
 		DD0A0EC9277E1FB200918465 /* OnePixelPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnePixelPostViewController.xib; sourceTree = "<group>"; };
+		DD0A0ECD277E211600918465 /* TimeTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTracker.swift; sourceTree = "<group>"; };
+		DD0A0ECE277E211600918465 /* CoreImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreImage+Extensions.swift"; sourceTree = "<group>"; };
+		DD0A0ECF277E211600918465 /* MemorySnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySnapshot.swift; sourceTree = "<group>"; };
+		DD0A0ED0277E211600918465 /* Numbers+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Numbers+Extensions.swift"; sourceTree = "<group>"; };
+		DD0A0ED5277E213300918465 /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
+		DD0A0ED7277E223A00918465 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
+		DD0A0EEA277E4A3E00918465 /* GeometryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +82,13 @@
 		DD0A0EA7277E04CE00918465 /* BlogCompanion */ = {
 			isa = PBXGroup;
 			children = (
+				DD0A0ECC277E211600918465 /* Utilities */,
 				DD0A0EBC277E04D800918465 /* Models */,
 				DD0A0EA8277E04CE00918465 /* AppDelegate.swift */,
 				DD0A0EAA277E04CE00918465 /* SceneDelegate.swift */,
 				DD0A0EAC277E04CE00918465 /* ViewController.swift */,
 				DD0A0EBF277E12F700918465 /* PostPages */,
+				DD0A0EDB277E254D00918465 /* Resources */,
 				DD0A0EAE277E04CE00918465 /* Main.storyboard */,
 				DD0A0EB1277E04CF00918465 /* Assets.xcassets */,
 				DD0A0EB3277E04CF00918465 /* LaunchScreen.storyboard */,
@@ -115,6 +131,43 @@
 				DD0A0EC9277E1FB200918465 /* OnePixelPostViewController.xib */,
 			);
 			path = OnePixel;
+			sourceTree = "<group>";
+		};
+		DD0A0ECC277E211600918465 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DD0A0EDA277E225200918465 /* Helpers */,
+				DD0A0ED9277E224200918465 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = SOURCE_ROOT;
+		};
+		DD0A0ED9277E224200918465 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD0A0ECE277E211600918465 /* CoreImage+Extensions.swift */,
+				DD0A0EEA277E4A3E00918465 /* GeometryExtension.swift */,
+				DD0A0ED0277E211600918465 /* Numbers+Extensions.swift */,
+				DD0A0ED7277E223A00918465 /* UIKit+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD0A0EDA277E225200918465 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DD0A0ECD277E211600918465 /* TimeTracker.swift */,
+				DD0A0ECF277E211600918465 /* MemorySnapshot.swift */,
+				DD0A0ED5277E213300918465 /* RenderView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DD0A0EDB277E254D00918465 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,12 +244,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD0A0ECA277E1FB200918465 /* OnePixelPostViewController.swift in Sources */,
+				DD0A0ED4277E211600918465 /* Numbers+Extensions.swift in Sources */,
+				DD0A0ED6277E213300918465 /* RenderView.swift in Sources */,
 				DD0A0EAD277E04CE00918465 /* ViewController.swift in Sources */,
+				DD0A0ED8277E223A00918465 /* UIKit+Extensions.swift in Sources */,
+				DD0A0ED2277E211600918465 /* CoreImage+Extensions.swift in Sources */,
 				DD0A0EC5277E140100918465 /* RenderingPostViewController.swift in Sources */,
 				DD0A0EA9277E04CE00918465 /* AppDelegate.swift in Sources */,
 				DD0A0EAB277E04CE00918465 /* SceneDelegate.swift in Sources */,
+				DD0A0ED3277E211600918465 /* MemorySnapshot.swift in Sources */,
 				DD0A0EBE277E04F100918465 /* Post.swift in Sources */,
 				DD0A0EC1277E132000918465 /* PostBaseViewController.swift in Sources */,
+				DD0A0ED1277E211600918465 /* TimeTracker.swift in Sources */,
+				DD0A0EEB277E4A3E00918465 /* GeometryExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
