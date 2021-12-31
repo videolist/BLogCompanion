@@ -11,11 +11,10 @@ import CoreImage.CIFilterBuiltins
 class RenderingPostViewController: PostBaseViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var renderView: RenderView!
-    @IBOutlet weak var metalSwitch: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        render()
+        render(usingMetal: true)
     }
 
     private lazy var inputImage = {
@@ -34,13 +33,7 @@ class RenderingPostViewController: PostBaseViewController {
         return filter
     }()
 
-    @IBAction func switchAction(_ sender: UISwitch) {
-        renderView.isHidden = !sender.isOn
-        imageView.isHidden = sender.isOn
-        render()
-    }
-
-    private func render() {
+    private func render(usingMetal: Bool) {
         guard let outputImage = inputImage
                 .applying(filter: swipeFilter)?
                 .clampedToExtent()
@@ -50,9 +43,11 @@ class RenderingPostViewController: PostBaseViewController {
                     return
                 }
 
-        if metalSwitch.isOn {
+        if usingMetal {
+            imageView.isHidden = true
             renderView.image = outputImage
         } else {
+            imageView.isHidden = false
             imageView.image = UIImage(ciImage: outputImage)
         }
 
@@ -62,6 +57,6 @@ class RenderingPostViewController: PostBaseViewController {
     @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
         let point = sender.location(in: imageView)
         swipeFilter.time = Float(max(0, min(1, point.x / imageView.frame.width)))
-        render()
+        render(usingMetal: point.y < imageView.frame.height / 2)
     }
 }
